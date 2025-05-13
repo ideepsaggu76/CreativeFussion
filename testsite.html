@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-4xl mx-auto my-12 p-8 bg-white rounded-lg shadow-md">
+    <h1 class="text-3xl font-bold text-blue-600 mb-4">Website Test Page</h1>
+    <p class="text-gray-700 mb-4">If you can see this page, your web server is working correctly.</p>
+    
+    <div class="p-6 bg-blue-50 rounded-lg border border-blue-200 mb-6">
+      <h2 class="text-xl font-semibold text-blue-700 mb-2">Test Components</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Text is visible</li>
+        <li>Colors are rendering</li>
+        <li>Layout is working</li>
+      </ul>
+    </div>
+    
+    <button id="toggleBtn" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+      Toggle Dark Mode
+    </button>
+  </div>
+
+  <script>
+    document.getElementById('toggleBtn').addEventListener('click', function() {
+      document.body.classList.toggle('bg-gray-900');
+      const container = document.querySelector('.max-w-4xl');
+      container.classList.toggle('bg-gray-800');
+      container.classList.toggle('bg-white');
+      container.querySelectorAll('p, li').forEach(el => {
+        el.classList.toggle('text-gray-300');
+        el.classList.toggle('text-gray-700');
+      });
+    });
+  </script>
+</body>
+</html>
