@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://creativefussion.me/sitemap.xml
