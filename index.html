@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <meta name="msvalidate.01" content="A65E5B86FA3C82FD085C0F7B19619A70" />
-    <title>CreativeFussion | Professional Creative Services</title>
-    <meta name="description" content="Professional creative services including logo design, social media management, video editing and more by CreativeFussion.">
+    <meta name="msvalidate.01" content="A65E5B86FA3C82FD085C0F7B19619A70" />
+    <title>CreativeFussion | Website Design, Logo Design, Graphic Flyer & Poster Services in Mansa, Punjab, India</title>
+    <meta name="description" content="CreativeFussion provides professional website design, logo design, graphic flyer, and poster design services. Serving Mansa, Punjab, India, and worldwide. Top freelancer for creative digital solutions." />
+    <meta name="keywords" content="CreativeFussion, website design, logo design, graphic flyer, poster design, freelancer, creative services, web service provider, Mansa, Punjab, India, digital marketing, branding, business card, social media graphics, UI/UX design, worldwide" />
     <style>
      /* Fallback styles in case React doesn't load */
       body {
@@ -125,12 +126,12 @@
     <div id="root"></div>
     <div class="loading-container">
       <div class="logo-container">
-        <img src="/logo.svg" alt="CreativeFussion" class="logo-img" onerror="handleLogoError(this)" />
+        <img src="/logo.svg" alt="CreativeFussion - Website Design, Logo Design, Graphics & Posters in Mansa Punjab India" class="logo-img" onerror="handleLogoError(this)" />
         <div class="logo-fallback" style="display: none;">CF</div>
         <div class="tagline-container">
           <div class="tagline tagline-1">Creating Excellence</div>
-          <div class="tagline tagline-2">Design • Video • Social Media</div>
-          <div class="tagline tagline-3">Welcome to CreativeFussion</div>
+          <div class="tagline tagline-2">Website Design • Logo Design • Graphics • Posters</div>
+          <div class="tagline tagline-3">Serving Mansa, Punjab, India & Worldwide</div>
         </div>
       </div>
     </div>
@@ -138,17 +139,14 @@
       // Logo error handling
       function handleLogoError(img) {
         console.error('Logo failed to load from path:', img.src);
-        
         // Try multiple alternative paths
         const alternativePaths = [
           'logo.svg',           // no leading slash
           'images/logo.svg',    // in images folder
           '/images/logo.svg'    // with leading slash in images folder
         ];
-        
         const originalSrc = img.src;
         let pathIndex = 0;
-        
         function tryNextPath() {
           if (pathIndex < alternativePaths.length) {
             const newPath = alternativePaths[pathIndex];
@@ -160,20 +158,16 @@
             showFallback(img);
           }
         }
-        
         // Set up the error handler to try the next path
         img.onerror = tryNextPath;
-        
         // Start trying alternative paths
         tryNextPath();
       }
-      
       function showFallback(img) {
         // Hide the img and show the fallback
         img.style.display = 'none';
         document.querySelector('.logo-fallback').style.display = 'flex';
       }
-    
       // Safety timeout to show error if app doesn't load
       setTimeout(function() {
         const root = document.getElementById('root');
@@ -193,7 +187,6 @@
           `;
         }
       }, 10000);
-
       // Add code to handle the intro animation completion
       document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
@@ -206,4 +199,4 @@
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
-</html> 
+</html>
