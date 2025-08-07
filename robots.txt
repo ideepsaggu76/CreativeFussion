@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: https://creativefussion.me/sitemap.xml
+Disallow: /debug
+Disallow: /debug/*
+
+# Sitemap location
+Sitemap: https://www.creativefussion.me/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
