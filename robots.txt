@@ -1,3 +1,24 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /src/
+Disallow: /node_modules/
+
+# Sitemap
 Sitemap: https://creativefussion.me/sitemap.xml
+Sitemap: https://creativefussion.me/public/sitemap.xml
+
+# Crawl-delay for better performance
+Crawl-delay: 1
+
+# Allow specific search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+User-agent: Slurp
+Allow: /
