@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowRight, FaChevronLeft, FaChevronRight, FaQuoteLeft, FaPlus, FaMinus } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
 import ImageWithFallback from '../components/ImageWithFallback';
+import SEO from '../components/SEO';
 
 const HomePage = () => {
   const { isDarkMode, reduceMotion } = useContext(ThemeContext);
@@ -143,8 +144,15 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      {/* Hero Section - Apple style */}
+    <>
+      <SEO 
+        title="CreativeFussion | Expertise. Creativity. Results. The Right Mix"
+        description="Professional creative services including logo design, social media management, video editing, poster design, and more by CreativeFussion."
+        keywords="creative services, logo design, social media management, video editing, AI video, graphic design, CreativeFussion, PDF editing, poster design"
+        canonical="/"
+      />
+      <div>
+        {/* Hero Section - Apple style */}
       <section className={`pt-20 sm:pt-28 pb-16 sm:pb-20 ${isDarkMode ? 'bg-[#1d1d1f]' : 'bg-[#fbfbfd]'}`}>
         <div className="max-w-7xl mx-auto px-4 text-center">
           <motion.div
@@ -521,6 +529,7 @@ const HomePage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

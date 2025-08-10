@@ -6,6 +6,7 @@ import { FaPalette, FaIdCard, FaDatabase, FaInstagram, FaVideo, FaLaptopCode,
   FaImage, FaFileAlt, FaYoutube, FaSearch, FaArrowRight, FaWhatsapp } from 'react-icons/fa';
 import { serviceImages } from '../components/ServicesFixed';
 import getImgUrl from '../utils/imgUrl';
+import SEO from '../components/SEO';
 
 const ServicesPage = () => {
   const { isDarkMode, reduceMotion } = useContext(ThemeContext);
@@ -254,7 +255,14 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="pt-24 pb-20 relative">
+    <>
+      <SEO 
+        title="Services | CreativeFussion - Professional Creative Services"
+        description="Explore our comprehensive range of creative services including logo design, social media management, video editing, and more tailored to your needs."
+        keywords="creative services, logo design, social media management, video editing, AI video, visiting card design, poster design, technical help, data entry"
+        canonical="/services"
+      />
+      <div className="pt-24 pb-20 relative">
       {/* Hero section */}
       <section className={`py-16 ${isDarkMode ? 'bg-[#1d1d1f]' : 'bg-[#f5f5f7]'}`}>
         <div className="max-w-7xl mx-auto px-4">
@@ -506,6 +514,7 @@ const ServicesPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

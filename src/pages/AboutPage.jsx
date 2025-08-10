@@ -3,12 +3,20 @@ import AboutMe from '../components/AboutMe';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ThemeContext } from '../context/ThemeContext';
+import SEO from '../components/SEO';
 
 const AboutPage = () => {
   const { isDarkMode, reduceMotion } = useContext(ThemeContext);
 
   return (
-    <div>
+    <>
+      <SEO 
+        title="About CreativeFussion | Professional Creative Expert"
+        description="Learn about the experience, skills, and creative vision behind CreativeFussion. Professional creative services with a personal touch."
+        keywords="creative services, designer profile, creative expert, CreativeFussion about, professional designer"
+        canonical="/about"
+      />
+      <div>
       <div className="bg-gradient-to-r from-green-600 to-teal-500 py-20">
         <div className="max-w-7xl mx-auto px-4 text-center text-white">
           <motion.h1
@@ -74,6 +82,7 @@ const AboutPage = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
