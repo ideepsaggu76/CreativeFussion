@@ -431,7 +431,7 @@ const App = () => {
               </address>
               <div className="mt-4">
                 <a 
-                  href="https://wa.me/9780089101"
+                  href="https://wa.me/919780089101"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-[#1d6bf3] hover:underline"

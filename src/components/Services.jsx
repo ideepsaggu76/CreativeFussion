@@ -414,7 +414,7 @@ const Services = () => {
                 View All Services <FaArrowRight className="ml-2" />
               </Link>
               <a 
-                href="https://wa.me/9780089101"
+                href="https://wa.me/919780089101"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-medium transition-all bg-transparent border-2 border-white text-white hover:bg-white/10"
