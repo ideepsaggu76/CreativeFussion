@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaTwitter, FaInstagram, FaEnvelope, FaPhone, FaWhatsapp, FaFacebookF, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { buildWhatsAppLink } from '../constants/contact';
 
 const Footer = () => {
   const socialLinks = [
@@ -125,7 +126,7 @@ const Footer = () => {
                   <FaWhatsapp className="text-green-400 group-hover:scale-110 transition-transform duration-300" />
                 </div>
                 <a 
-                  href="https://wa.me/919780089101?text=Hi%20Randeep,%20I%20saw%20your%20website%20and%20I'm%20interested%20in%20your%20services" 
+                  href={buildWhatsAppLink("Hi Randeep, I saw your website and I'm interested in your services")} 
                   className="text-gray-300 hover:text-white flex items-center group-hover:translate-x-1 transition-transform duration-200"
                   target="_blank"
                   rel="noopener noreferrer"

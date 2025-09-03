@@ -13,6 +13,14 @@ import AboutPage from './pages/AboutPage';
 import DebugPage from './pages/DebugPage';
 import { getImgUrl } from './utils/imgUrl';
 import ImageWithFallback from './components/ImageWithFallback';
+import { 
+  WHATSAPP_BASE_URL, 
+  WHATSAPP_DISPLAY, 
+  CONTACT_EMAIL, 
+  CONTACT_PHONE, 
+  CONTACT_LOCATION,
+  buildWhatsAppLink 
+} from './constants/contact';
 
 // Animation variants for page transitions
 const pageVariants = {
@@ -377,7 +385,7 @@ const App = () => {
       {/* Floating WhatsApp Button */}
       <div className="fixed bottom-8 right-8 z-40">
         <motion.a
-          href="https://wa.me/919780089101"
+          href={WHATSAPP_BASE_URL}
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
@@ -424,14 +432,14 @@ const App = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <address className={`not-italic text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                <p className="mb-1">Call: +91 9779406876</p>
-                <p className="mb-1">WhatsApp: +91 9780089101</p>
-                <p className="mb-1">Email: pb31ale1212@gmail.com</p>
-                <p className="mb-1">Sector 56, Chandigarh, India</p>
+                <p className="mb-1">Call: {CONTACT_PHONE}</p>
+                <p className="mb-1">WhatsApp: {WHATSAPP_DISPLAY}</p>
+                <p className="mb-1">Email: {CONTACT_EMAIL}</p>
+                <p className="mb-1">{CONTACT_LOCATION}</p>
               </address>
               <div className="mt-4">
                 <a 
-                  href="https://wa.me/9780089101"
+                  href={buildWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium text-[#1d6bf3] hover:underline"

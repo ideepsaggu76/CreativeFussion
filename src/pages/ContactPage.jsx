@@ -2,6 +2,13 @@ import React, { useState, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { ThemeContext } from '../context/ThemeContext';
+import { 
+  WHATSAPP_DISPLAY, 
+  buildWhatsAppLink, 
+  CONTACT_EMAIL, 
+  CONTACT_PHONE, 
+  CONTACT_LOCATION 
+} from '../constants/contact';
 
 const ContactPage = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -20,7 +27,7 @@ const ContactPage = () => {
   
   const handleWhatsApp = () => {
     const text = `Hi, I'm ${formData.name} and I'm interested in your services. ${formData.message}`;
-    window.open(`https://wa.me/+919780089101?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(buildWhatsAppLink(text), '_blank');
     resetForm();
   };
   
@@ -37,7 +44,7 @@ Message: ${formData.message}
     `.trim();
     
     // Open WhatsApp with the formatted message
-    window.open(`https://wa.me/+919780089101?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(buildWhatsAppLink(text), '_blank');
   };
   
   const resetForm = () => {
@@ -236,7 +243,7 @@ Message: ${formData.message}
                   </div>
                   <div>
                     <h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Phone</h3>
-                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>+91 9780089101</p>
+                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{CONTACT_PHONE}</p>
                   </div>
                 </div>
                 
@@ -246,7 +253,7 @@ Message: ${formData.message}
                   </div>
                   <div>
                     <h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Email</h3>
-                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>pb31ale1212@gmail.com</p>
+                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{CONTACT_EMAIL}</p>
                   </div>
                 </div>
                 
@@ -256,7 +263,7 @@ Message: ${formData.message}
                   </div>
                   <div>
                     <h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Location</h3>
-                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Mohali, Chandigarh</p>
+                    <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{CONTACT_LOCATION}</p>
                   </div>
                 </div>
                 
@@ -268,7 +275,7 @@ Message: ${formData.message}
                     <h3 className={`text-lg font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>WhatsApp</h3>
                     <p className={`mt-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                       <a 
-                        href="https://wa.me/9780089101"
+                        href={buildWhatsAppLink()}
                         target="_blank" 
                         rel="noopener noreferrer"
                         className={`flex items-center px-4 py-3 rounded-xl ${
@@ -280,7 +287,7 @@ Message: ${formData.message}
                         </div>
                         <div>
                           <h3 className={`font-semibold ${isDarkMode ? 'text-gray-200' : 'text-gray-900'}`}>WhatsApp</h3>
-                          <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>+91 9780089101</p>
+                          <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>{WHATSAPP_DISPLAY}</p>
                         </div>
                       </a>
                     </p>
@@ -318,7 +325,7 @@ Message: ${formData.message}
                 For fastest response, contact us directly on WhatsApp. We typically respond within 2 hours during business hours.
               </p>
               <a 
-                href="https://wa.me/9780089101" 
+                href={buildWhatsAppLink()} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={`inline-flex items-center ${

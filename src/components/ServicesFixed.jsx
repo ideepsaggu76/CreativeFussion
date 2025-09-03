@@ -6,6 +6,7 @@ import { FaPalette, FaIdCard, FaDatabase, FaInstagram, FaVideo, FaLaptopCode,
 import { ThemeContext } from '../context/ThemeContext';
 import { getImgUrl } from '../utils/imgUrl';
 import ImageWithFallback from './ImageWithFallback';
+import { buildWhatsAppLink } from '../constants/contact';
 
 // Use local image paths from the public folder - export this for use in other components
 export const serviceImages = {
@@ -246,7 +247,7 @@ const ServiceCard = ({ service, index }) => {
         </motion.div>
         
         <motion.a 
-          href={`https://wa.me/919780089101?text=Hi%20Randeep,%20I'm%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.%20Can%20you%20provide%20more%20information?`} 
+          href={buildWhatsAppLink(`Hi Randeep, I'm interested in your ${service.title} service. Can you provide more information?`)} 
           target="_blank"
           rel="noopener noreferrer"
           className={`inline-flex items-center ${
