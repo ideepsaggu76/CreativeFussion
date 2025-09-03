@@ -7,6 +7,7 @@ import { FaPalette, FaIdCard, FaDatabase, FaInstagram, FaVideo, FaLaptopCode,
 import { serviceImages } from '../components/ServicesFixed';
 import getImgUrl from '../utils/imgUrl';
 import SEO from '../components/SEO';
+import { buildWhatsAppLink } from '../constants/contact';
 
 const ServicesPage = () => {
   const { isDarkMode, reduceMotion } = useContext(ThemeContext);
@@ -457,7 +458,7 @@ const ServicesPage = () => {
                     </ul>
                     
                     <a 
-                      href={`https://wa.me/919780089101?text=Hi,%20I'm%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service.%20Could%20you%20provide%20more%20details?`}
+                      href={buildWhatsAppLink(`Hi, I'm interested in your ${service.title} service. Could you provide more details?`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex items-center px-4 py-2 rounded-full text-white hover:shadow-lg transition-all duration-300 text-sm font-medium`}
@@ -489,7 +490,7 @@ const ServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="https://wa.me/919780089101"
+                href={buildWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`inline-flex items-center px-6 py-3 rounded-full ${

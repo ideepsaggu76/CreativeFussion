@@ -6,6 +6,7 @@ import { FaPalette, FaIdCard, FaDatabase, FaInstagram, FaVideo, FaLaptopCode,
 import { ThemeContext } from '../context/ThemeContext';
 import { getImgUrl } from '../utils/imgUrl';
 import ImageWithFallback from './ImageWithFallback';
+import { buildWhatsAppLink } from '../constants/contact';
 
 // Use local image paths from the public folder
 const localImages = {
@@ -268,7 +269,7 @@ const ServiceCard = ({ service, isDarkMode, reduceMotion, isHovered, setHoveredI
             {service.price}
           </span>
           <a 
-            href={`https://wa.me/919780089101?text=I'm%20interested%20in%20your%20${encodeURIComponent(service.title)}%20service`} 
+            href={buildWhatsAppLink(`I'm interested in your ${service.title} service`)} 
             target="_blank" 
             rel="noopener noreferrer"
             className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -414,7 +415,7 @@ const Services = () => {
                 View All Services <FaArrowRight className="ml-2" />
               </Link>
               <a 
-                href="https://wa.me/9780089101"
+                href={buildWhatsAppLink()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-medium transition-all bg-transparent border-2 border-white text-white hover:bg-white/10"

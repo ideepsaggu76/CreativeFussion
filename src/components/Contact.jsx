@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaWhatsapp, FaEnvelope, FaLinkedin, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import { buildWhatsAppLink, WHATSAPP_BASE_URL } from '../constants/contact';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,16 +27,14 @@ const Contact = () => {
     setIsSubmitting(true);
     
     // Format message for WhatsApp
-    const whatsappMessage = encodeURIComponent(
-      `*New Inquiry from Website*\n
+    const whatsappMessage = `*New Inquiry from Website*\n
 *Name:* ${formData.name}
 *Email:* ${formData.email}
 *Subject:* ${formData.subject}
-*Message:* ${formData.message}`
-    );
+*Message:* ${formData.message}`;
     
     // Open WhatsApp with pre-filled message
-    window.open(`https://wa.me/919780089101?text=${whatsappMessage}`, '_blank');
+    window.open(buildWhatsAppLink(whatsappMessage), '_blank');
     
     // Simulate form submission
     setTimeout(() => {
@@ -60,13 +59,13 @@ const Contact = () => {
       icon: <FaPhone />,
       title: 'Phone',
       value: '9779406876',
-      link: 'tel:9779406876',
+      link: 'tel:+919779406876',
     },
     {
       icon: <FaWhatsapp />,
       title: 'WhatsApp',
       value: '9780089101',
-      link: 'https://wa.me/919780089101',
+      link: WHATSAPP_BASE_URL,
       primary: true,
     },
     {
